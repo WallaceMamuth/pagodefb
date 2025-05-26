@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Grupo de Pagode - Bem-vindo!</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+</head>
+<body class="bg-gradient-to-b from-gray-100 via-gray-50 to-gray-100 text-gray-900 font-sans overflow-x-hidden break-words">
+
+  <!-- Header -->
+  <header class="bg-black bg-opacity-70 sticky top-0 z-50 shadow-md">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-3xl font-bold tracking-widest text-yellow-400">PagodeVibe</h1>
+      <nav class="space-x-6 hidden md:flex">
+        <a href="#sobre" class="hover:underline text-gray-100">Sobre</a>
+        <a href="#agenda" class="hover:underline text-gray-100">Agenda</a>
+        <a href="#musicas" class="hover:underline text-gray-100">Músicas</a>
+        <a href="#redes" class="hover:underline text-gray-100">Redes Sociais</a>
+      </nav>
+      <!-- Botão mobile -->
+      <div class="md:hidden">
+        <button id="menu-btn" class="text-yellow-400 text-3xl focus:outline-none">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+    <!-- Menu mobile -->
+    <div id="mobile-menu" class="hidden md:hidden bg-black bg-opacity-90 px-6 py-4 space-y-4 text-center">
+      <a href="#sobre" class="block text-yellow-300">Sobre</a>
+      <a href="#agenda" class="block text-yellow-300">Agenda</a>
+      <a href="#musicas" class="block text-yellow-300">Músicas</a>
+      <a href="#redes" class="block text-yellow-300">Redes Sociais</a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="min-h-screen flex flex-col justify-center items-center px-6 text-center space-y-6">
+    <h2 class="text-4xl sm:text-5xl md:text-6xl font-extrabold drop-shadow-lg text-gray-900">Sinta a Batida do Pagode</h2>
+    <p class="max-w-xl text-base sm:text-lg md:text-xl text-yellow-700 font-semibold">O melhor pagode da cidade, energia contagiante e muita alegria.</p>
+    <a href="#agenda" class="inline-block bg-yellow-500 text-black font-bold px-8 py-3 rounded-full shadow-lg hover:bg-yellow-400 transition">Veja a Agenda</a>
+    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" alt="Grupo de Pagode" class="w-full max-w-4xl rounded-lg shadow-lg mt-8" />
+  </section>
+
+  <!-- Sobre -->
+  <section id="sobre" class="bg-black bg-opacity-80 py-16 px-6 text-center max-w-4xl mx-auto rounded-xl my-12">
+    <h3 class="text-4xl font-semibold mb-6 text-yellow-500">Sobre o Grupo</h3>
+    <p class="text-lg text-yellow-200 leading-relaxed">
+      Formado por amigos apaixonados pelo pagode, nosso grupo traz uma mistura de clássicos e novos sucessos para animar qualquer evento. Com muita paixão pela música, levamos alegria e emoção para o público.
+    </p>
+  </section>
+
+  <!-- Agenda -->
+  <section id="agenda" class="max-w-6xl mx-auto px-4 sm:px-6 py-12">
+    <h3 class="text-4xl font-semibold mb-8 text-yellow-500 text-center">Próximos Shows</h3>
+    <div class="grid gap-8 sm:grid-cols-2 md:grid-cols-3">
+      <!-- Itens -->
+      <div class="bg-yellow-400 bg-opacity-30 p-6 rounded-xl shadow-md hover:bg-yellow-500 hover:bg-opacity-60 transition">
+        <h4 class="text-2xl font-bold mb-2 text-gray-900">Show na Praça Central</h4>
+        <p class="font-semibold text-gray-800">Data: 10/06/2025</p>
+        <p class="text-gray-800">Local: Praça dos Tamborins</p>
+      </div>
+      <div class="bg-yellow-400 bg-opacity-30 p-6 rounded-xl shadow-md hover:bg-yellow-500 hover:bg-opacity-60 transition">
+        <h4 class="text-2xl font-bold mb-2 text-gray-900">Festa do Samba</h4>
+        <p class="font-semibold text-gray-800">Data: 25/06/2025</p>
+        <p class="text-gray-800">Local: Espaço Cultural Rio</p>
+      </div>
+      <div class="bg-yellow-400 bg-opacity-30 p-6 rounded-xl shadow-md hover:bg-yellow-500 hover:bg-opacity-60 transition">
+        <h4 class="text-2xl font-bold mb-2 text-gray-900">Show Particular</h4>
+        <p class="font-semibold text-gray-800">Data: 05/07/2025</p>
+        <p class="text-gray-800">Local: Clube do Samba</p>
+      </div>
+    </div>
+  </section>
+
+<!-- Seção de Vídeos em Destaque -->
+<section class="py-16 bg-gradient-to-b from-white to-yellow-50 px-6 md:px-12" id="videos" data-aos="fade-up">
+  <h2 class="text-3xl md:text-4xl font-extrabold text-center mb-12 text-yellow-600">Pagode Que Toca a Alma</h2>
+  <p class="text-center text-gray-600 max-w-2xl mx-auto mb-10 text-lg">Confira os vídeos que representam nossa essência — roda de samba, alegria nas ruas e aquele batuque que faz o coração bater no compasso do surdo.</p>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-6xl mx-auto">
+    
+    <!-- Vídeo 1 -->
+    <div class="video-container group relative rounded-2xl overflow-hidden cursor-pointer shadow-lg hover:shadow-2xl transition duration-300" data-aos="fade-up" data-aos-delay="100">
+      <div class="relative w-full pb-[56.25%] bg-black">
+        <img src="https://img.youtube.com/vi/sc1RIX0RZBo/hqdefault.jpg" alt="Thumb Vídeo 1" class="absolute top-0 left-0 w-full h-full object-cover">
+        <div class="absolute inset-0 flex items-center justify-center play-btn bg-black bg-opacity-50">
+          <svg class="w-16 h-16 text-white transition transform group-hover:scale-110" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M8 5v14l11-7z" />
+          </svg>
+        </div>
+        <div class="video-player absolute top-0 left-0 w-full h-full hidden">
+          <iframe src="https://www.youtube.com/embed/sc1RIX0RZBo" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen class="w-full h-full rounded-2xl"></iframe>
+        </div>
+      </div>
+      <p class="mt-4 text-lg text-gray-800 font-semibold">“Samba na calçada é festa de verdade.”</p>
+    </div>
+
+    <!-- Vídeo 2 -->
+    <div class="video-container group relative rounded-2xl overflow-hidden cursor-pointer shadow-lg hover:shadow-2xl transition duration-300" data-aos="fade-up" data-aos-delay="200">
+      <div class="relative w-full pb-[56.25%] bg-black">
+        <img src="https://img.youtube.com/vi/3JZ_D3ELwOQ/hqdefault.jpg" alt="Thumb Vídeo 2" class="absolute top-0 left-0 w-full h-full object-cover">
+        <div class="absolute inset-0 flex items-center justify-center play-btn bg-black bg-opacity-50">
+          <svg class="w-16 h-16 text-white transition transform group-hover:scale-110" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M8 5v14l11-7z" />
+          </svg>
+        </div>
+        <div class="video-player absolute top-0 left-0 w-full h-full hidden">
+          <iframe src="https://www.youtube.com/embed/3JZ_D3ELwOQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen class="w-full h-full rounded-2xl"></iframe>
+        </div>
+      </div>
+      <p class="mt-4 text-lg text-gray-800 font-semibold">“Onde tem tamborim, tem alegria!”</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- Script para ativar o vídeo ao clique -->
+<script>
+  document.querySelectorAll('.video-container').forEach(container => {
+    container.addEventListener('click', () => {
+      const videoPlayer = container.querySelector('.video-player');
+      const playButton = container.querySelector('.play-btn');
+      if (videoPlayer && playButton) {
+        videoPlayer.classList.remove('hidden');
+        playButton.classList.add('hidden');
+      }
+    });
+  });
+</script>
+
+
+
+<!-- Seção de Natal: Gratidão e Solidariedade -->
+<section class="py-16 px-6 md:px-12 bg-red-50" id="natal">
+  <h2 class="text-3xl font-extrabold text-center mb-12 text-red-700">Feliz Natal com Pagode e Solidariedade</h2>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+    <!-- Agradecimento -->
+    <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-2xl transform hover:scale-105 transition">
+      <h3 class="text-xl font-semibold mb-4 text-gray-900">Gratidão a Todos os Fãs</h3>
+      <p class="text-gray-700 mb-4">2025 foi um ano especial graças a vocês! Cada show, cada aplauso, cada mensagem — nossa eterna gratidão!</p>
+      <img class="w-full h-48 object-cover rounded-lg mb-4" src="https://via.placeholder.com/400x250" alt="Gratidão aos fãs">
+      <p class="text-gray-700">Desejamos que o Natal de vocês seja cheio de amor, música e alegria. Obrigado por fazerem parte da nossa história.</p>
+    </div>
+
+    <!-- Campanha solidária -->
+    <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-2xl transform hover:scale-105 transition">
+      <h3 class="text-xl font-semibold mb-4 text-gray-900">Pagode Solidário de Natal</h3>
+      <p class="text-gray-700 mb-4">Estamos organizando um show beneficente para arrecadar alimentos e brinquedos para quem mais precisa. Junte-se a essa corrente do bem!</p>
+      <img class="w-full h-48 object-cover rounded-lg mb-4" src="https://via.placeholder.com/400x250" alt="Solidariedade Pagode">
+      <a href="#" class="text-red-600 hover:underline mt-4 block">Saiba como participar</a>
+    </div>
+
+    <!-- Impacto das doações -->
+    <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-2xl transform hover:scale-105 transition">
+      <h3 class="text-xl font-semibold mb-4 text-gray-900">Você Faz a Diferença</h3>
+      <p class="text-gray-700 mb-4">Com a sua ajuda, centenas de famílias terão um Natal mais feliz. Mesmo um pequeno gesto já muda vidas!</p>
+      <img class="w-full h-48 object-cover rounded-lg mb-4" src="https://via.placeholder.com/400x250" alt="Doações de Natal">
+      <a href="#" class="text-red-600 hover:underline mt-4 block">Veja o impacto do seu apoio</a>
+    </div>
+
+  </div>
+
+
+</section>
+<!-- Seção de Doação -->
+<section class="py-16 px-6 md:px-12 bg-red-50 text-center" id="doacao" data-aos="fade-up">
+  <h2 class="text-3xl md:text-4xl font-extrabold text-red-700 mb-6">Doe com Amor</h2>
+  <p class="text-lg text-gray-700 max-w-xl mx-auto mb-8">
+    Neste fim de ano, nosso grupo de pagode está arrecadando doações para apoiar famílias em situação de vulnerabilidade. 
+    Toda contribuição, por menor que seja, faz a diferença. 
+  </p>
+
+  <div class="text-center">
+    <button onclick="document.getElementById('pix-info').classList.remove('hidden'); this.classList.add('hidden')" 
+            class="bg-red-600 text-white py-3 px-8 rounded-full text-lg hover:bg-red-500 transition-all shadow-md">
+      Aperte para Doar
+    </button>
+  </div>
+
+  <!-- Dados Pix ocultos inicialmente -->
+  <div id="pix-info" class="hidden mt-8 text-gray-800 text-lg max-w-xl mx-auto bg-white p-6 rounded-xl shadow-md">
+    <p><strong>Chave Pix:</strong> XXXXXXXXXXXX</p>
+    <p><strong>Nome do Beneficiário:</strong> XXXXXXXXXXXX</p>
+    <p><strong>Banco:</strong> XXXXXXXXXXXXXX</p>
+    <p class="mt-4 italic text-gray-600">Com sua ajuda, o nosso samba alcança quem mais precisa!</p>
+  </div>
+</section>
+
+
+
+<!-- Músicas -->
+<section id="musicas" class="bg-black bg-opacity-80 py-16 px-4 sm:px-6 max-w-4xl mx-auto rounded-xl my-12 text-center text-yellow-100" data-aos="fade-up">
+  <h3 class="text-4xl font-semibold mb-6 text-yellow-500">Nossas Músicas</h3>
+  <p class="text-yellow-300 mb-10">Ouça nossos maiores sucessos e sinta a vibe do pagode.</p>
+
+  <div class="space-y-8">
+    
+    <!-- Música 1 -->
+    <div>
+      <h4 class="text-xl font-semibold mb-2">Sorriso da Madrugada</h4>
+      <audio controls class="w-full rounded-lg shadow-md">
+        <source src="/static/assets/musica/musica0.mp3" type="audio/mpeg">
+        Seu navegador não suporta áudio.
+      </audio>
+    </div>
+
+    <!-- Música 2 -->
+    <div>
+      <h4 class="text-xl font-semibold mb-2">Teu Abraço no Meu Samba</h4>
+      <audio controls class="w-full rounded-lg shadow-md">
+        <source src="/static/assets/musica/musica1.mp3" type="audio/mpeg">
+        Seu navegador não suporta áudio.
+      </audio>
+    </div>
+
+    <!-- Música 3 -->
+    <div>
+      <h4 class="text-xl font-semibold mb-2">Pagode é Amor</h4>
+      <audio controls class="w-full rounded-lg shadow-md">
+        <source src="/static/assets/musica/musica2.mp3" type="audio/mpeg">
+        Seu navegador não suporta áudio.
+      </audio>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- Redes Sociais -->
+<section id="redes" class="w-full px-4 sm:px-6 py-12 text-center">
+  <div class="max-w-5xl mx-auto">
+    <h3 class="text-4xl font-semibold mb-10 text-yellow-500">Nossas Redes Sociais</h3>
+    <div class="flex flex-wrap justify-center gap-8 text-gray-900">
+
+      <!-- Instagram -->
+      <a href="https://www.instagram.com/watechevoce/" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center hover:scale-110 transition-transform">
+        <i class="fab fa-instagram text-pink-600 text-5xl mb-2"></i>
+        <span>Instagram</span>
+      </a>
+
+      <!-- Facebook -->
+      <a href="https://www.facebook.com/watechevoce" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center hover:scale-110 transition-transform">
+        <i class="fab fa-facebook text-blue-700 text-5xl mb-2"></i>
+        <span>Facebook</span>
+      </a>
+
+      <!-- TikTok -->
+      <a href="https://www.tiktok.com/@exemplo" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center hover:scale-110 transition-transform">
+        <i class="fab fa-tiktok text-black text-5xl mb-2"></i>
+        <span>TikTok</span>
+      </a>
+
+      <!-- YouTube -->
+      <a href="https://www.youtube.com/@exemplo" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center hover:scale-110 transition-transform">
+        <i class="fab fa-youtube text-red-700 text-5xl mb-2"></i>
+        <span>YouTube</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
+
+  <!-- Seção de Instagram -->
+<section id="instagram-post" class="py-12 bg-white px-6 md:px-12">
+  <h2 class="text-3xl font-bold text-center mb-8" data-aos="fade-up">Confira nosso post no Instagram</h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 max-w-5xl mx-auto">
+
+    <!-- Post 1 -->
+    <div class="insta-container relative rounded-xl shadow overflow-hidden cursor-pointer aspect-w-16 aspect-h-9" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
+      <blockquote class="instagram-media w-full" data-instgrm-permalink="https://www.instagram.com/reel/DI22kizqeNK/?utm_source=ig_embed" data-instgrm-version="14">
+        <a href="https://www.instagram.com/reel/DI22kizqeNK/?utm_source=ig_embed" target="_blank">Veja o post no Instagram</a>
+      </blockquote>
+    </div>
+
+    <!-- Post 2 -->
+    <div class="insta-container relative rounded-xl shadow overflow-hidden cursor-pointer aspect-w-16 aspect-h-9" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+<blockquote class="instagram-media w-full" data-instgrm-permalink="https://www.instagram.com/p/DKGGLMxNl_O/" data-instgrm-version="14">
+    <a href="https://www.instagram.com/p/DKGGLMxNl_O/" target="_blank">Veja o post no Instagram</a>
+</blockquote>
+<script async src="//www.instagram.com/embed.js"></script>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- Script para ativar embed Instagram -->
+<script async src="https://www.instagram.com/embed.js"></script>
+
+<!-- Instagram embed script -->
+
+
+<!-- Agradecimento -->
+<section class="py-16 px-4 sm:px-6 text-center max-w-6xl mx-auto mb-12 border-gray-200 bg-gray-100" data-aos="fade-up">
+  <h3 class="text-4xl font-bold mb-4 text-gray-800">Agradecemos aos nossos Patrocinadores</h3>
+  <p class="text-gray-600 text-lg max-w-3xl mx-auto mb-12">
+    Nosso sucesso não seria possível sem o apoio dos nossos parceiros e patrocinadores. Muito obrigado pela confiança e parceria!
+  </p>
+
+  <!-- Galeria de patrocinadores -->
+  <div class="grid grid-cols-2 sm:grid-cols-4 gap-8 items-center justify-center">
+    
+    <!-- Patrocinador 1 -->
+    <div class="flex flex-col items-center p-4">
+      <a href="https://www.watechevoce.com.br/" target="_blank" rel="noopener noreferrer" class="block">
+        <img src="/static/assets/img/watech.webp" alt="Patrocinador 1" class="h-40 object-contain mx-auto hover:scale-105 transition-transform duration-300" />
+      </a>
+      <a href="https://www.watechevoce.com.br/" target="_blank" rel="noopener noreferrer" class="mt-3 text-blue-600 hover:underline text-sm font-medium cursor-pointer">
+        Aperte e conheça mais.
+      </a>
+    </div>
+
+    <!-- Patrocinador 2 -->
+    <div class="flex flex-col items-center p-4">
+      <a href="https://link-do-patrocinador2.com" target="_blank" rel="noopener noreferrer" class="block">
+        <img src="https://via.placeholder.com/150x100?text=Patrocinador+2" alt="Patrocinador 2" class="h-40 object-contain mx-auto hover:scale-105 transition-transform duration-300" />
+      </a>
+      <a href="https://link-do-patrocinador2.com" target="_blank" rel="noopener noreferrer" class="mt-3 text-blue-600 hover:underline text-sm font-medium cursor-pointer">
+        Aperte e conheça mais.
+      </a>
+    </div>
+
+    <!-- Patrocinador 3 -->
+    <div class="flex flex-col items-center p-4">
+      <a href="https://link-do-patrocinador3.com" target="_blank" rel="noopener noreferrer" class="block">
+        <img src="https://via.placeholder.com/150x100?text=Patrocinador+3" alt="Patrocinador 3" class="h-40 object-contain mx-auto hover:scale-105 transition-transform duration-300" />
+      </a>
+      <a href="https://link-do-patrocinador3.com" target="_blank" rel="noopener noreferrer" class="mt-3 text-blue-600 hover:underline text-sm font-medium cursor-pointer">
+        Aperte e conheça mais.
+      </a>
+    </div>
+
+    <!-- Patrocinador 4 -->
+    <div class="flex flex-col items-center p-4">
+      <a href="https://link-do-patrocinador4.com" target="_blank" rel="noopener noreferrer" class="block">
+        <img src="https://via.placeholder.com/150x100?text=Patrocinador+4" alt="Patrocinador 4" class="h-40 object-contain mx-auto hover:scale-105 transition-transform duration-300" />
+      </a>
+      <a href="https://link-do-patrocinador4.com" target="_blank" rel="noopener noreferrer" class="mt-3 text-blue-600 hover:underline text-sm font-medium cursor-pointer">
+        Aperte e conheça mais.
+      </a>
+    </div>
+
+  </div>
+</section>
+
+
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 py-6 text-center text-gray-400 text-sm">
+    <p>© 2025 PagodeVibe. Todos os direitos reservados. Desenvolvido por 
+      <a href="https://www.watechevoce.com.br/" class="text-yellow-400 hover:underline">WATech</a>
+    </p>
+  </footer>
+
+  <!-- Script menu mobile -->
+  <script>
+    const btn = document.getElementById('menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    btn.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>
