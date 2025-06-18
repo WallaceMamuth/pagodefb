@@ -1,377 +1,653 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Grupo de Pagode - Bem-vindo!</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nova Mente - Grupo Musical</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 3s ease-in-out infinite',
+                        'fade-in': 'fadeIn 1s ease-in-out',
+                        'slide-up': 'slideUp 0.8s ease-out',
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                        'bounce-slow': 'bounce 3s ease-in-out infinite',
+                        'shimmer': 'shimmer 2s ease-in-out infinite',
+                        'wiggle': 'wiggle 1s ease-in-out infinite'
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' }
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' }
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(100px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' }
+                        },
+                        glow: {
+                            '0%': { boxShadow: '0 0 20px rgba(168, 85, 247, 0.5)' },
+                            '100%': { boxShadow: '0 0 40px rgba(168, 85, 247, 0.8)' }
+                        },
+                        shimmer: {
+                            '0%': { transform: 'translateX(-100%)' },
+                            '100%': { transform: 'translateX(100%)' }
+                        },
+                        wiggle: {
+                            '0%, 100%': { transform: 'rotate(-3deg)' },
+                            '50%': { transform: 'rotate(3deg)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- SEO & Social -->
+    <meta name="description" content="Landing page do grupo de pagode Nova Mente. Conheça nossa história, músicas, vídeos e próximos eventos!">
+    <meta property="og:title" content="Nova Mente - Grupo Musical">
+    <meta property="og:description" content="Landing page do grupo de pagode Nova Mente. Conheça nossa história, músicas, vídeos e próximos eventos!">
+    <meta property="og:image" content="https://i.imgur.com/1Q9Z1Z1.png">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
 </head>
-<body class="bg-gradient-to-b from-gray-100 via-gray-50 to-gray-100 text-gray-900 font-sans overflow-x-hidden break-words">
-
-  <!-- Header -->
-  <header class="bg-black bg-opacity-70 sticky top-0 z-50 shadow-md">
-    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-      <h1 class="text-3xl font-bold tracking-widest text-yellow-400">PagodeVibe</h1>
-      <nav class="space-x-6 hidden md:flex">
-        <a href="#sobre" class="hover:underline text-gray-100">Sobre</a>
-        <a href="#agenda" class="hover:underline text-gray-100">Agenda</a>
-        <a href="#musicas" class="hover:underline text-gray-100">Músicas</a>
-        <a href="#redes" class="hover:underline text-gray-100">Redes Sociais</a>
-      </nav>
-      <!-- Botão mobile -->
-      <div class="md:hidden">
-        <button id="menu-btn" class="text-yellow-400 text-3xl focus:outline-none">
-          <i class="fas fa-bars"></i>
-        </button>
-      </div>
-    </div>
-    <!-- Menu mobile -->
-    <div id="mobile-menu" class="hidden md:hidden bg-black bg-opacity-90 px-6 py-4 space-y-4 text-center">
-      <a href="#sobre" class="block text-yellow-300">Sobre</a>
-      <a href="#agenda" class="block text-yellow-300">Agenda</a>
-      <a href="#musicas" class="block text-yellow-300">Músicas</a>
-      <a href="#redes" class="block text-yellow-300">Redes Sociais</a>
-    </div>
-  </header>
-
-<!-- Hero -->
-<section class="flex flex-col justify-center items-center px-6 text-center space-y-6 pt-16 sm:pt-24 pb-12">
-  <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold drop-shadow-lg text-gray-900">Sinta a Batida do Pagode</h1>
-  <p class="max-w-xl text-base sm:text-lg md:text-xl text-yellow-700 font-semibold">
-    O melhor pagode da cidade, energia contagiante e muita alegria.
-  </p>
-  <a href="#agenda" class="inline-block bg-yellow-500 text-black font-bold px-8 py-3 rounded-full shadow-lg hover:bg-yellow-400 transition">
-    Veja a Agenda
-  </a>
-  <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80"
-       alt="Grupo de Pagode"
-       class="w-full max-w-4xl rounded-lg shadow-lg mt-8" />
-</section>
-
-
-  <!-- Sobre -->
-  <section id="sobre" class="bg-black bg-opacity-80 py-16 px-6 text-center max-w-4xl mx-auto rounded-xl my-12">
-    <h3 class="text-4xl font-semibold mb-6 text-yellow-500">Sobre o Grupo</h3>
-    <p class="text-lg text-yellow-200 leading-relaxed">
-      Formado por amigos apaixonados pelo pagode, nosso grupo traz uma mistura de clássicos e novos sucessos para animar qualquer evento. Com muita paixão pela música, levamos alegria e emoção para o público.
-    </p>
-  </section>
-
-  <!-- Agenda -->
-  <section id="agenda" class="max-w-6xl mx-auto px-4 sm:px-6 py-12">
-    <h3 class="text-4xl font-semibold mb-8 text-yellow-500 text-center">Próximos Shows</h3>
-    <div class="grid gap-8 sm:grid-cols-2 md:grid-cols-3">
-      <!-- Itens -->
-      <div class="bg-yellow-400 bg-opacity-30 p-6 rounded-xl shadow-md hover:bg-yellow-500 hover:bg-opacity-60 transition">
-        <h4 class="text-2xl font-bold mb-2 text-gray-900">Show na Praça Central</h4>
-        <p class="font-semibold text-gray-800">Data: 10/06/2025</p>
-        <p class="text-gray-800">Local: Praça dos Tamborins</p>
-      </div>
-      <div class="bg-yellow-400 bg-opacity-30 p-6 rounded-xl shadow-md hover:bg-yellow-500 hover:bg-opacity-60 transition">
-        <h4 class="text-2xl font-bold mb-2 text-gray-900">Festa do Samba</h4>
-        <p class="font-semibold text-gray-800">Data: 25/06/2025</p>
-        <p class="text-gray-800">Local: Espaço Cultural Rio</p>
-      </div>
-      <div class="bg-yellow-400 bg-opacity-30 p-6 rounded-xl shadow-md hover:bg-yellow-500 hover:bg-opacity-60 transition">
-        <h4 class="text-2xl font-bold mb-2 text-gray-900">Show Particular</h4>
-        <p class="font-semibold text-gray-800">Data: 05/07/2025</p>
-        <p class="text-gray-800">Local: Clube do Samba</p>
-      </div>
-    </div>
-  </section>
-
-<!-- Seção de Vídeos em Destaque -->
-<section class="py-16 bg-gradient-to-b from-white to-yellow-50 px-6 md:px-12" id="videos" data-aos="fade-up">
-  <h2 class="text-3xl md:text-4xl font-extrabold text-center mb-12 text-yellow-600">Pagode Que Toca a Alma</h2>
-  <p class="text-center text-gray-600 max-w-2xl mx-auto mb-10 text-lg">Confira os vídeos que representam nossa essência — roda de samba, alegria nas ruas e aquele batuque que faz o coração bater no compasso do surdo.</p>
-
-  <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-6xl mx-auto">
-    
-    <!-- Vídeo 1 -->
-    <div class="video-container group relative rounded-2xl overflow-hidden cursor-pointer shadow-lg hover:shadow-2xl transition duration-300" data-aos="fade-up" data-aos-delay="100">
-      <div class="relative w-full pb-[56.25%] bg-black">
-        <img src="https://img.youtube.com/vi/sc1RIX0RZBo/hqdefault.jpg" alt="Thumb Vídeo 1" class="absolute top-0 left-0 w-full h-full object-cover">
-        <div class="absolute inset-0 flex items-center justify-center play-btn bg-black bg-opacity-50">
-          <svg class="w-16 h-16 text-white transition transform group-hover:scale-110" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M8 5v14l11-7z" />
-          </svg>
+<body class="bg-gradient-to-br from-orange-50 via-pink-50 to-purple-100 text-gray-800 overflow-x-hidden">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-white bg-opacity-90 backdrop-blur-lg shadow-lg border-b border-purple-200">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-2xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+                    Nova Mente
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-purple-600 transition-colors duration-300 font-medium">Início</a>
+                    <a href="#about" class="text-gray-700 hover:text-purple-600 transition-colors duration-300 font-medium">História</a>
+                    <a href="#music" class="text-gray-700 hover:text-purple-600 transition-colors duration-300 font-medium">Música</a>
+                    <a href="#videos" class="text-gray-700 hover:text-purple-600 transition-colors duration-300 font-medium">Vídeos</a>
+                    <a href="#events" class="text-gray-700 hover:text-purple-600 transition-colors duration-300 font-medium">Eventos</a>
+                    <a href="#contact" class="text-gray-700 hover:text-purple-600 transition-colors duration-300 font-medium">Contato</a>
+                </div>
+                <button class="md:hidden text-gray-700">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
         </div>
-        <div class="video-player absolute top-0 left-0 w-full h-full hidden">
-          <iframe src="https://www.youtube.com/embed/sc1RIX0RZBo" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen class="w-full h-full rounded-2xl"></iframe>
+    </nav>
+
+    <!-- Hero Section with Video Background -->
+    <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden">
+        <!-- Video Background -->
+        <div class="absolute inset-0 z-0">
+            <video id="bgVideo" autoplay loop playsinline class="w-full h-full object-cover" style="opacity:1;">
+                <source src="static/assets/video/backsite.mp4" type="video/mp4">
+            </video>
         </div>
-      </div>
-      <p class="mt-4 text-lg text-gray-800 font-semibold">“Samba na calçada é festa de verdade.”</p>
-    </div>
 
-    <!-- Vídeo 2 -->
-    <div class="video-container group relative rounded-2xl overflow-hidden cursor-pointer shadow-lg hover:shadow-2xl transition duration-300" data-aos="fade-up" data-aos-delay="200">
-      <div class="relative w-full pb-[56.25%] bg-black">
-        <img src="https://img.youtube.com/vi/3JZ_D3ELwOQ/hqdefault.jpg" alt="Thumb Vídeo 2" class="absolute top-0 left-0 w-full h-full object-cover">
-        <div class="absolute inset-0 flex items-center justify-center play-btn bg-black bg-opacity-50">
-          <svg class="w-16 h-16 text-white transition transform group-hover:scale-110" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M8 5v14l11-7z" />
-          </svg>
+        <!-- Botão de Mute/Unmute -->
+
+
+        <!-- Remova ou comente as divs de elementos animados para não criar sombra -->
+        <!--
+        <div class="absolute inset-0 z-10">
+            <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-40 animate-float"></div>
+            <div class="absolute top-1/3 right-1/4 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-float" style="animation-delay: -2s;"></div>
+            <div class="absolute bottom-1/4 left-1/3 w-80 h-80 bg-orange-300 rounded-full mix-blend-multiply filter blur-xl opacity-35 animate-float" style="animation-delay: -4s;"></div>
         </div>
-        <div class="video-player absolute top-0 left-0 w-full h-full hidden">
-          <iframe src="https://www.youtube.com/embed/3JZ_D3ELwOQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen class="w-full h-full rounded-2xl"></iframe>
+        -->
+
+        <div class="container mx-auto px-6 text-center relative z-20">
+            <div class="animate-fade-in">
+                <h1 class="text-5xl md:text-7xl font-extrabold mb-6 bg-gradient-to-r from-purple-600 via-pink-600 to-orange-600 bg-clip-text text-transparent animate-pulse-slow">
+                    Nova Mente
+                </h1>
+                <p class="text-lg md:text-2xl mb-8 text-gray-700 max-w-2xl mx-auto leading-relaxed font-medium">
+                    O pagode que nasce no coração de São Paulo e conquista o Brasil. Siga, ouça e compartilhe!
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-4">
+                    <a href="https://open.spotify.com/search/nova%20mente" target="_blank" class="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-purple-500/25 animate-glow flex items-center gap-2">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.371 0 0 5.371 0 12c0 6.627 5.371 12 12 12s12-5.373 12-12c0-6.629-5.371-12-12-12zm5.297 17.438c-.221.363-.691.479-1.055.258-2.891-1.77-6.543-2.168-10.824-1.18-.418.094-.844-.168-.938-.586-.094-.418.168-.844.586-.938 4.676-1.062 8.684-.617 11.863 1.258.363.221.479.691.258 1.088zm1.504-2.672c-.277.447-.857.594-1.309.318-3.309-2.016-8.365-2.604-12.285-1.418-.512.148-1.049-.137-1.197-.648-.148-.512.137-1.049.648-1.197 4.418-1.289 9.922-.646 13.637 1.646.447.277.594.857.318 1.299zm.146-2.779c-3.982-2.367-10.563-2.584-14.352-1.406-.617.191-1.277-.145-1.469-.762-.191-.617.145-1.277.762-1.469 4.273-1.324 11.418-1.072 15.871 1.584.564.336.746 1.07.41 1.635-.336.564-1.07.746-1.635.418z"/></svg>
+                        Ouça no Spotify
+                    </a>
+                    <a href="#contact" class="bg-white/80 backdrop-blur-sm border-2 border-purple-400 text-purple-700 hover:bg-purple-500 hover:text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center gap-2">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10.5V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h7.5"></path><path d="M21 10.5l-9 5.5-9-5.5"></path><path d="M17 17l4 4m0 0l-4-4m4 4V13"></path></svg>
+                        Contato
+                    </a>
+                </div>
+                <!-- Redes sociais + mute juntos -->
+                <div class="flex justify-center gap-6 mt-4 items-center">
+<a href="https://wa.me/5521991813996" target="_blank" aria-label="WhatsApp" class="text-green-500 hover:text-green-600 transition">
+    <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M20.52 3.48A11.93 11.93 0 0 0 12 0C5.37 0 0 5.37 0 12c0 2.11.55 4.16 1.6 5.98L0 24l6.18-1.62A11.94 11.94 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.19-1.24-6.19-3.48-8.52zM12 22c-1.85 0-3.66-.5-5.23-1.44l-.37-.22-3.67.96.98-3.57-.24-.37A9.94 9.94 0 1 1 12 22zm5.47-7.14c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.27-.47-2.42-1.5-.9-.8-1.5-1.77-1.68-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.5-.5-.67-.5h-.57c-.2 0-.52.07-.8.37-.27.3-1.05 1.02-1.05 2.5 0 1.47 1.07 2.9 1.22 3.1.15.2 2.1 3.2 5.1 4.37.71.3 1.26.48 1.7.62.71.23 1.36.2 1.87.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.08-.12-.27-.2-.57-.35z"/></svg>
+</a>
+
+<a href="https://www.instagram.com/novamentenoar" target="_blank" aria-label="Instagram" class="text-pink-500 hover:text-pink-600 transition">
+    <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.584.012 4.85.07 1.17.056 1.97.24 2.43.41a4.92 4.92 0 0 1 1.77 1.03 4.92 4.92 0 0 1 1.03 1.77c.17.46.354 1.26.41 2.43.058 1.266.07 1.65.07 4.85s-.012 3.584-.07 4.85c-.056 1.17-.24 1.97-.41 2.43a4.92 4.92 0 0 1-1.03 1.77 4.92 4.92 0 0 1-1.77 1.03c-.46.17-1.26.354-2.43.41-1.266.058-1.65.07-4.85.07s-3.584-.012-4.85-.07c-1.17-.056-1.97-.24-2.43-.41a4.92 4.92 0 0 1-1.77-1.03 4.92 4.92 0 0 1-1.03-1.77c-.17-.46-.354-1.26-.41-2.43C2.212 15.784 2.2 15.4 2.2 12s.012-3.584.07-4.85c.056-1.17.24-1.97.41-2.43A4.92 4.92 0 0 1 3.71 2.95a4.92 4.92 0 0 1 1.77-1.03c.46-.17 1.26-.354 2.43-.41C8.416 2.212 8.8 2.2 12 2.2zm0-2.2C8.736 0 8.332.012 7.052.07 5.77.128 4.87.31 4.09.54a7.07 7.07 0 0 0-2.56 1.64A7.07 7.07 0 0 0 .54 4.09c-.23.78-.412 1.68-.47 2.96C.012 8.332 0 8.736 0 12c0 3.264.012 3.668.07 4.948.058 1.28.24 2.18.47 2.96a7.07 7.07 0 0 0 1.64 2.56 7.07 7.07 0 0 0 2.56 1.64c.78.23 1.68.412 2.96.47C8.332 23.988 8.736 24 12 24s3.668-.012 4.948-.07c1.28-.058 2.18-.24 2.96-.47a7.07 7.07 0 0 0 2.56-1.64 7.07 7.07 0 0 0 1.64-2.56c.23-.78.412-1.68.47-2.96.058-1.28.07-1.684.07-4.948s-.012-3.668-.07-4.948c-.058-1.28-.24-2.18-.47-2.96a7.07 7.07 0 0 0-1.64-2.56A7.07 7.07 0 0 0 19.91.54c-.78-.23-1.68-.412-2.96-.47C15.668.012 15.264 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a3.999 3.999 0 1 1 0-7.998 3.999 3.999 0 0 1 0 7.998zm7.844-10.406a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z"/></svg>
+</a>
+
+<a href="https://www.youtube.com/@gruponovamenteoficial3904" target="_blank" aria-label="YouTube" class="text-red-500 hover:text-red-600 transition">
+    <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a2.994 2.994 0 0 0-2.107-2.12C19.13 3.5 12 3.5 12 3.5s-7.13 0-9.391.566A2.994 2.994 0 0 0 .502 6.186C0 8.45 0 12 0 12s0 3.55.502 5.814a2.994 2.994 0 0 0 2.107 2.12C4.87 20.5 12 20.5 12 20.5s7.13 0 9.391-.566a2.994 2.994 0 0 0 2.107-2.12C24 15.55 24 12 24 12s0-3.55-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+</a>
+
+
+                    <!-- Botão mute pequeno ao lado das redes -->
+                <button id="muteBtn" type="button" class="w-8 h-8 flex items-center justify-center bg-white/80 hover:bg-white text-purple-700 rounded-full shadow transition-all duration-200 p-0 border border-purple-200">
+                    <svg id="muteIcon" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M11 5L6 9H2v6h4l5 4V5z"></path>
+                        <path id="muteSlash" d="M19 5l-14 14" style="display:none"></path>
+                    </svg>
+                    <span id="muteText" class="sr-only">Mutar</span>
+                </button>
+                </div>
+            </div>
         </div>
-      </div>
-      <p class="mt-4 text-lg text-gray-800 font-semibold">“Onde tem tamborim, tem alegria!”</p>
-    </div>
+    </section>
 
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white/50 backdrop-blur-sm">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+                    Nossa História
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6 animate-slide-up">
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Formado em 2018 no coração de São Paulo, o <span class="text-purple-600 font-semibold">Nova Mente</span> 
+                        surge com a missão de revolucionar o cenário do samba brasileiro. Com 6 anos de trajetória, 
+                        acumulamos mais de <span class="text-orange-600 font-bold">3.2 bilhões</span> de visualizações 
+                        nas plataformas digitais.
+                    </p>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Nosso último álbum <span class="text-pink-600 font-semibold">"Alma Brasileira"</span>, 
+                        lançado em março de 2024, alcançou o <span class="text-orange-600 font-bold">TOP 5</span> 
+                        do Spotify Brasil, com o hit "Samba do Coração" conquistando o primeiro lugar nacional 
+                        por 8 semanas consecutivas.
+                    </p>
+                    <div class="flex flex-wrap gap-3 pt-4">
+                        <span class="bg-gradient-to-r from-purple-100 to-purple-200 text-purple-700 px-4 py-2 rounded-full text-sm font-medium">🏆 5x Disco de Ouro</span>
+                        <span class="bg-gradient-to-r from-pink-100 to-pink-200 text-pink-700 px-4 py-2 rounded-full text-sm font-medium">🎭 200+ Shows/Ano</span>
+                        <span class="bg-gradient-to-r from-orange-100 to-orange-200 text-orange-700 px-4 py-2 rounded-full text-sm font-medium">🎵 50M+ Ouvintes</span>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <div class="bg-gradient-to-br from-purple-400 to-pink-400 p-8 rounded-2xl shadow-2xl transform rotate-3 hover:rotate-0 transition-transform duration-300">
+                        <div class="bg-white/20 backdrop-blur-sm p-6 rounded-xl">
+                            <h3 class="text-2xl font-bold mb-4 text-center text-white">Números que Impressionam</h3>
+                            <div class="grid grid-cols-2 gap-4 text-center text-white">
+                                <div>
+                                    <div class="text-3xl font-bold text-yellow-200">3.2B+</div>
+                                    <div class="text-sm">Visualizações</div>
+                                </div>
+                                <div>
+                                    <div class="text-3xl font-bold text-green-200">50M+</div>
+                                    <div class="text-sm">Ouvintes Mensais</div>
+                                </div>
+                                <div>
+                                    <div class="text-3xl font-bold text-blue-200">1.2K+</div>
+                                    <div class="text-sm">Shows Realizados</div>
+                                </div>
+                                <div>
+                                    <div class="text-3xl font-bold text-purple-200">15</div>
+                                    <div class="text-sm">Prêmios</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Videos Section -->
+    <section id="videos" class="py-20 bg-gradient-to-br from-purple-50 to-pink-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+                    Nossos Vídeos
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto rounded-full"></div>
+            </div>
+
+            <!-- YouTube Videos -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-bold text-center mb-8 text-purple-700">🎥 YouTube</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="bg-white rounded-2xl shadow-xl overflow-hidden hover:scale-105 transition-transform duration-300">
+    <div class="aspect-video">
+        <iframe 
+            class="w-full h-full" 
+            src="https://www.youtube.com/embed/cDkdNnd7L9M?autoplay=1&mute=1&loop=1&playlist=cDkdNnd7L9M" 
+            title="Samba do Coração - Clipe Oficial" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen
+        ></iframe>
+    </div>
+    <div class="p-4">
+        <p class="text-gray-600 text-sm">250M+ visualizações • #1 Brasil</p>
+    </div>
+</div>
+
+                    <div class="bg-white rounded-2xl shadow-xl overflow-hidden hover:scale-105 transition-transform duration-300">
+                        <div class="aspect-video bg-gradient-to-br from-blue-400 to-purple-400 flex items-center justify-center">
+                            <div class="text-white text-center">
+                                <div class="text-6xl mb-2">▶️</div>
+                                <p class="font-bold">Noite de Lua</p>
+                                <p class="text-sm opacity-80">Acoustic Session</p>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <p class="text-gray-600 text-sm">180M+ visualizações • Trending</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-2xl shadow-xl overflow-hidden hover:scale-105 transition-transform duration-300">
+                        <div class="aspect-video bg-gradient-to-br from-green-400 to-teal-400 flex items-center justify-center">
+                            <div class="text-white text-center">
+                                <div class="text-6xl mb-2">▶️</div>
+                                <p class="font-bold">Festa na Quebrada</p>
+                                <p class="text-sm opacity-80">Live Performance</p>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <p class="text-gray-600 text-sm">120M+ visualizações • Viral</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Instagram Content -->
+            <div>
+                <h3 class="text-2xl font-bold text-center mb-8 text-purple-700">📷 Instagram</h3>
+                <div class="grid md:grid-cols-4 gap-4">
+<div class="bg-white rounded-2xl p-2 flex items-center justify-center text-white font-bold hover:scale-105 transition-transform duration-300 shadow-lg overflow-hidden min-h-[420px]">
+    <!-- Embed do Instagram -->
+    <blockquote 
+        class="instagram-media" 
+        data-instgrm-captioned 
+        data-instgrm-permalink="https://www.instagram.com/p/DHv-3zQM_0z/?utm_source=ig_embed&amp;utm_campaign=loading" 
+        data-instgrm-version="14" 
+        style="background:#FFF; border:0; border-radius:12px; box-shadow:none; margin:0; width:100%;">
+    </blockquote>
+    <script async src="//www.instagram.com/embed.js"></script>
+</div>
+
+                    <div class="aspect-square bg-gradient-to-br from-purple-400 to-pink-400 rounded-2xl flex items-center justify-center text-white font-bold hover:scale-105 transition-transform duration-300 shadow-lg">
+                        <div class="text-center">
+                            <div class="text-3xl mb-2">🎤</div>
+                            <p class="text-sm">Live Stories</p>
+                        </div>
+                    </div>
+<div class="rounded-2xl overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300">
+  <div class="aspect-square">
+    <!-- Embed do Instagram -->
+    <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DJcA4DFtXY2/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="max-width: 100%; min-width: 100%; width: 100%;">
+    </blockquote>
   </div>
-</section>
-
-<!-- Script para ativar o vídeo ao clique -->
-<script>
-  document.querySelectorAll('.video-container').forEach(container => {
-    container.addEventListener('click', () => {
-      const videoPlayer = container.querySelector('.video-player');
-      const playButton = container.querySelector('.play-btn');
-      if (videoPlayer && playButton) {
-        videoPlayer.classList.remove('hidden');
-        playButton.classList.add('hidden');
-      }
-    });
-  });
-</script>
-
-
-
-<!-- Seção de Natal: Gratidão e Solidariedade -->
-<section class="py-16 px-6 md:px-12 bg-red-50" id="natal">
-  <h2 class="text-3xl font-extrabold text-center mb-12 text-red-700">Feliz Natal com Pagode e Solidariedade</h2>
-
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-
-    <!-- Agradecimento -->
-    <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-2xl transform hover:scale-105 transition">
-      <h3 class="text-xl font-semibold mb-4 text-gray-900">Gratidão a Todos os Fãs</h3>
-      <p class="text-gray-700 mb-4">2025 foi um ano especial graças a vocês! Cada show, cada aplauso, cada mensagem — nossa eterna gratidão!</p>
-      <img class="w-full h-48 object-cover rounded-lg mb-4" src="https://via.placeholder.com/400x250" alt="Gratidão aos fãs">
-      <p class="text-gray-700">Desejamos que o Natal de vocês seja cheio de amor, música e alegria. Obrigado por fazerem parte da nossa história.</p>
-    </div>
-
-    <!-- Campanha solidária -->
-    <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-2xl transform hover:scale-105 transition">
-      <h3 class="text-xl font-semibold mb-4 text-gray-900">Pagode Solidário de Natal</h3>
-      <p class="text-gray-700 mb-4">Estamos organizando um show beneficente para arrecadar alimentos e brinquedos para quem mais precisa. Junte-se a essa corrente do bem!</p>
-      <img class="w-full h-48 object-cover rounded-lg mb-4" src="https://via.placeholder.com/400x250" alt="Solidariedade Pagode">
-      <a href="#" class="text-red-600 hover:underline mt-4 block">Saiba como participar</a>
-    </div>
-
-    <!-- Impacto das doações -->
-    <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-2xl transform hover:scale-105 transition">
-      <h3 class="text-xl font-semibold mb-4 text-gray-900">Você Faz a Diferença</h3>
-      <p class="text-gray-700 mb-4">Com a sua ajuda, centenas de famílias terão um Natal mais feliz. Mesmo um pequeno gesto já muda vidas!</p>
-      <img class="w-full h-48 object-cover rounded-lg mb-4" src="https://via.placeholder.com/400x250" alt="Doações de Natal">
-      <a href="#" class="text-red-600 hover:underline mt-4 block">Veja o impacto do seu apoio</a>
-    </div>
-
-  </div>
-
-
-</section>
-<!-- Seção de Doação -->
-<section class="py-16 px-6 md:px-12 bg-red-50 text-center" id="doacao" data-aos="fade-up">
-  <h2 class="text-3xl md:text-4xl font-extrabold text-red-700 mb-6">Doe com Amor</h2>
-  <p class="text-lg text-gray-700 max-w-xl mx-auto mb-8">
-    Neste fim de ano, nosso grupo de pagode está arrecadando doações para apoiar famílias em situação de vulnerabilidade. 
-    Toda contribuição, por menor que seja, faz a diferença. 
-  </p>
-
-  <div class="text-center">
-    <button onclick="document.getElementById('pix-info').classList.remove('hidden'); this.classList.add('hidden')" 
-            class="bg-red-600 text-white py-3 px-8 rounded-full text-lg hover:bg-red-500 transition-all shadow-md">
-      Aperte para Doar
-    </button>
-  </div>
-
-  <!-- Dados Pix ocultos inicialmente -->
-  <div id="pix-info" class="hidden mt-8 text-gray-800 text-lg max-w-xl mx-auto bg-white p-6 rounded-xl shadow-md">
-    <p><strong>Chave Pix:</strong> XXXXXXXXXXXX</p>
-    <p><strong>Nome do Beneficiário:</strong> XXXXXXXXXXXX</p>
-    <p><strong>Banco:</strong> XXXXXXXXXXXXXX</p>
-    <p class="mt-4 italic text-gray-600">Com sua ajuda, o nosso samba alcança quem mais precisa!</p>
-  </div>
-</section>
-
-
-
-<!-- Músicas -->
-<section id="musicas" class="bg-black bg-opacity-80 py-16 px-4 sm:px-6 max-w-4xl mx-auto rounded-xl my-12 text-center text-yellow-100" data-aos="fade-up">
-  <h3 class="text-4xl font-semibold mb-6 text-yellow-500">Nossas Músicas</h3>
-  <p class="text-yellow-300 mb-10">Ouça nossos maiores sucessos e sinta a vibe do pagode.</p>
-
-  <div class="space-y-8">
-    
-    <!-- Música 1 -->
-    <div>
-      <h4 class="text-xl font-semibold mb-2">Sorriso da Madrugada</h4>
-      <audio controls class="w-full rounded-lg shadow-md">
-        <source src="static/assets/musica/musica0.mp3" type="audio/mpeg">
-        Seu navegador não suporta áudio.
-      </audio>
-    </div>
-
-    <!-- Música 2 -->
-    <div>
-      <h4 class="text-xl font-semibold mb-2">Teu Abraço no Meu Samba</h4>
-      <audio controls class="w-full rounded-lg shadow-md">
-        <source src="static/assets/musica/musica1.mp3" type="audio/mpeg">
-        Seu navegador não suporta áudio.
-      </audio>
-    </div>
-
-    <!-- Música 3 -->
-    <div>
-      <h4 class="text-xl font-semibold mb-2">Pagode é Amor</h4>
-      <audio controls class="w-full rounded-lg shadow-md">
-        <source src="static/assets/musica/musica2.mp3" type="audio/mpeg">
-        Seu navegador não suporta áudio.
-      </audio>
-    </div>
-
-  </div>
-</section>
-
-
-<!-- Redes Sociais -->
-<section id="redes" class="w-full px-4 sm:px-6 py-12 text-center">
-  <div class="max-w-5xl mx-auto">
-    <h3 class="text-4xl font-semibold mb-10 text-yellow-500">Nossas Redes Sociais</h3>
-    <div class="flex flex-wrap justify-center gap-8 text-gray-900">
-
-      <!-- Instagram -->
-      <a href="https://www.instagram.com/watechevoce/" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center hover:scale-110 transition-transform">
-        <i class="fab fa-instagram text-pink-600 text-5xl mb-2"></i>
-        <span>Instagram</span>
-      </a>
-
-      <!-- Facebook -->
-      <a href="https://www.facebook.com/watechevoce" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center hover:scale-110 transition-transform">
-        <i class="fab fa-facebook text-blue-700 text-5xl mb-2"></i>
-        <span>Facebook</span>
-      </a>
-
-      <!-- TikTok -->
-      <a href="https://www.tiktok.com/@exemplo" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center hover:scale-110 transition-transform">
-        <i class="fab fa-tiktok text-black text-5xl mb-2"></i>
-        <span>TikTok</span>
-      </a>
-
-      <!-- YouTube -->
-      <a href="https://www.youtube.com/@exemplo" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center hover:scale-110 transition-transform">
-        <i class="fab fa-youtube text-red-700 text-5xl mb-2"></i>
-        <span>YouTube</span>
-      </a>
-
-    </div>
-  </div>
-</section>
-
-
-
-  <!-- Seção de Instagram -->
-<section id="instagram-post" class="py-12 bg-white px-6 md:px-12">
-  <h2 class="text-3xl font-bold text-center mb-8" data-aos="fade-up">Confira nosso post no Instagram</h2>
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 max-w-5xl mx-auto">
-
-    <!-- Post 1 -->
-    <div class="insta-container relative rounded-xl shadow overflow-hidden cursor-pointer aspect-w-16 aspect-h-9" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
-      <blockquote class="instagram-media w-full" data-instgrm-permalink="https://www.instagram.com/reel/DI22kizqeNK/?utm_source=ig_embed" data-instgrm-version="14">
-        <a href="https://www.instagram.com/reel/DI22kizqeNK/?utm_source=ig_embed" target="_blank">Veja o post no Instagram</a>
-      </blockquote>
-    </div>
-
-    <!-- Post 2 -->
-    <div class="insta-container relative rounded-xl shadow overflow-hidden cursor-pointer aspect-w-16 aspect-h-9" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
-<blockquote class="instagram-media w-full" data-instgrm-permalink="https://www.instagram.com/p/DKGGLMxNl_O/" data-instgrm-version="14">
-    <a href="https://www.instagram.com/p/DKGGLMxNl_O/" target="_blank">Veja o post no Instagram</a>
-</blockquote>
+</div>
 <script async src="//www.instagram.com/embed.js"></script>
 
+                    <div class="aspect-square bg-gradient-to-br from-teal-400 to-blue-400 rounded-2xl flex items-center justify-center text-white font-bold hover:scale-105 transition-transform duration-300 shadow-lg">
+                        <div class="text-center">
+                            <div class="text-3xl mb-2">🔴</div>
+                            <p class="text-sm">IGTV</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Next Event Section -->
+    <section id="events" class="py-20 bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 relative overflow-hidden">
+    <!-- Animated background elements -->
+    <div class="absolute inset-0">
+        <div class="absolute top-10 left-10 w-20 h-20 bg-white/10 rounded-full animate-bounce-slow"></div>
+        <div class="absolute top-20 right-20 w-16 h-16 bg-white/10 rounded-full animate-bounce-slow" style="animation-delay: -1s;"></div>
+        <div class="absolute bottom-20 left-1/4 w-24 h-24 bg-white/10 rounded-full animate-bounce-slow" style="animation-delay: -0.5s;"></div>
+        <div class="absolute bottom-10 right-1/3 w-12 h-12 bg-white/10 rounded-full animate-bounce-slow" style="animation-delay: -1.5s;"></div>
     </div>
 
-  </div>
+    <div class="container mx-auto px-6 relative z-10">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl md:text-6xl font-bold mb-4 text-white animate-wiggle">
+                🎉 PRÓXIMO EVENTO 🎉
+            </h2>
+            <div class="w-32 h-2 bg-white mx-auto rounded-full animate-shimmer relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent animate-shimmer"></div>
+            </div>
+        </div>
+
+        <div class="max-w-4xl mx-auto">
+            <div class="bg-white/10 backdrop-blur-lg rounded-3xl p-8 md:p-12 shadow-2xl border border-white/20 animate-glow">
+                <div class="text-center mb-8">
+                    <div class="text-5xl md:text-7xl font-bold text-white mb-4 animate-pulse-slow">
+                        EVENTO ESPECIAL 2025
+                    </div>
+                    <div class="text-2xl md:text-3xl text-yellow-200 font-semibold mb-2">
+                        🏢 Carioca Shopping - Rio de Janeiro
+                    </div>
+                    <div class="text-lg text-white/90 mb-2">
+                        📍 Av. Vicente de Carvalho, 909 – Vila da Penha, RJ
+                    </div>
+                    <div class="text-xl text-white/90">
+                        📅 22 de Junho, 2025 (Domingo) • ⏰ 15:00h
+                    </div>
+                </div>
+
+                <!-- Vídeo do Evento -->
+<!-- Vídeo do Evento -->
+<div class="w-full lg:w-1/2 mx-auto aspect-w-16 aspect-h-9 mb-8">
+    <video class="w-full h-full rounded-xl shadow-lg" controls>
+        <source src="static/assets/video/evento01.mp4" type="video/mp4">
+        Seu navegador não suporta vídeo.
+    </video>
+</div>
+
+
+                <div class="grid md:grid-cols-3 gap-6 mb-8">
+                    <div class="text-center bg-white/10 rounded-2xl p-6">
+                        <div class="text-4xl mb-2">🎫</div>
+                        <div class="text-white font-bold text-lg">Entrada</div>
+                        <div class="text-yellow-200">Gratuita</div>
+                    </div>
+                    <div class="text-center bg-white/10 rounded-2xl p-6">
+                        <div class="text-4xl mb-2">🎤</div>
+                        <div class="text-white font-bold text-lg">Atração</div>
+                        <div class="text-yellow-200">Nova Mente</div>
+                    </div>
+                    <div class="text-center bg-white/10 rounded-2xl p-6">
+                        <div class="text-4xl mb-2">👥</div>
+                        <div class="text-white font-bold text-lg">Público Esperado</div>
+                        <div class="text-yellow-200">Mais de 1.000 pessoas</div>
+                    </div>
+                </div>
+
+<div class="text-center">
+  <a href="https://www.google.com/maps/place/Carioca+Shopping/@-22.8499637,-43.3135935,17z/data=!3m2!4b1!5s0x997ca28ddae185:0x1d8d293d6b907f98!4m6!3m5!1s0x997c98903eb679:0x45f0e513c1f9128d!8m2!3d-22.8499687!4d-43.3110186!16s%2Fm%2F042zgxr?entry=ttu&g_ep=EgoyMDI1MDYxNS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">
+    <button class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-purple-700 transition-all duration-300 transform hover:scale-105">
+      📍 VER LOCALIZAÇÃO
+    </button>
+  </a>
+</div>
+
+
+                <!-- Contagem Regressiva -->
+                <div class="mt-8 p-6 bg-white/10 rounded-2xl">
+                    <div class="text-center text-white">
+                        <p class="text-lg mb-4 font-semibold">⏰ Contagem Regressiva</p>
+                        <div class="flex justify-center space-x-4 text-2xl font-bold">
+                            <div class="bg-white/20 rounded-lg p-3">
+                                <div id="days">--</div>
+                                <div class="text-sm">DIAS</div>
+                            </div>
+                            <div class="bg-white/20 rounded-lg p-3">
+                                <div id="hours">--</div>
+                                <div class="text-sm">HORAS</div>
+                            </div>
+                            <div class="bg-white/20 rounded-lg p-3">
+                                <div id="minutes">--</div>
+                                <div class="text-sm">MIN</div>
+                            </div>
+                            <div class="bg-white/20 rounded-lg p-3">
+                                <div id="seconds">--</div>
+                                <div class="text-sm">SEG</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
 </section>
 
-<!-- Script para ativar embed Instagram -->
-<script async src="https://www.instagram.com/embed.js"></script>
+<!-- SCRIPT Contagem Regressiva -->
+<script>
+    const eventDate = new Date("2025-06-22T15:00:00").getTime();
 
-<!-- Instagram embed script -->
+    const countdown = () => {
+        const now = new Date().getTime();
+        const distance = eventDate - now;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("days").textContent = days;
+        document.getElementById("hours").textContent = hours;
+        document.getElementById("minutes").textContent = minutes;
+        document.getElementById("seconds").textContent = seconds;
+
+        if (distance < 0) {
+            document.getElementById("days").textContent = "0";
+            document.getElementById("hours").textContent = "0";
+            document.getElementById("minutes").textContent = "0";
+            document.getElementById("seconds").textContent = "0";
+        }
+    };
+
+    setInterval(countdown, 1000);
+</script>
+
+    <!-- Band Members -->
+    <section class="py-20 bg-white/80">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-purple-600 to-orange-600 bg-clip-text text-transparent">
+                    Os Integrantes
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-purple-500 to-orange-500 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="text-center group">
+                    <div class="bg-gradient-to-br from-purple-400 to-pink-400 w-32 h-32 rounded-full mx-auto mb-4 flex items-center justify-center text-4xl transform group-hover:scale-110 transition-transform duration-300 shadow-xl">
+                        🎤
+                    </div>
+                    <h3 class="text-xl font-bold text-purple-600">Vocalista Principal</h3>
+                    <p class="text-gray-600">A voz que emociona</p>
+                </div>
+                <div class="text-center group">
+                    <div class="bg-gradient-to-br from-blue-400 to-purple-400 w-32 h-32 rounded-full mx-auto mb-4 flex items-center justify-center text-4xl transform group-hover:scale-110 transition-transform duration-300 shadow-xl">
+                        🥁
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-600">Repique & Surdo</h3>
+                    <p class="text-gray-600">O coração da batida</p>
+                </div>
+                <div class="text-center group">
+                    <div class="bg-gradient-to-br from-green-400 to-teal-400 w-32 h-32 rounded-full mx-auto mb-4 flex items-center justify-center text-4xl transform group-hover:scale-110 transition-transform duration-300 shadow-xl">
+                        🪘
+                    </div>
+                    <h3 class="text-xl font-bold text-green-600">Pandeiro</h3>
+                    <p class="text-gray-600">O ritmo que contagia</p>
+                </div>
+                <div class="text-center group">
+                    <div class="bg-gradient-to-br from-orange-400 to-red-400 w-32 h-32 rounded-full mx-auto mb-4 flex items-center justify-center text-4xl transform group-hover:scale-110 transition-transform duration-300 shadow-xl">
+                        🎸
+                    </div>
+                    <h3 class="text-xl font-bold text-orange-600">Cavaquinho</h3>
+                    <p class="text-gray-600">A alma do samba</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Music Section -->
+    <section id="music" class="py-20 bg-gradient-to-br from-pink-50 to-purple-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">
+                    Sucessos Recentes
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-green-500 to-blue-500 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-2xl hover:scale-105 transition-transform duration-300 shadow-xl border border-purple-100">
+                    <div class="text-6xl mb-4 text-center">🎵</div>
+                    <h3 class="text-xl font-bold mb-2 text-purple-700">Samba do Coração</h3>
+                    <p class="text-gray-600 mb-4">O hit que conquistou o Brasil inteiro</p>
+                    <div class="flex justify-between text-sm text-gray-500">
+                        <span>250M+ plays</span>
+                        <span class="bg-yellow-100 text-yellow-700 px-2 py-1 rounded-full">#1 Brasil</span>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-2xl hover:scale-105 transition-transform duration-300 shadow-xl border border-purple-100">
+                    <div class="text-6xl mb-4 text-center">🎶</div>
+                    <h3 class="text-xl font-bold mb-2 text-blue-700">Noite de Lua</h3>
+                    <p class="text-gray-600 mb-4">Romance que toca a alma</p>
+                    <div class="flex justify-between text-sm text-gray-500">
+                        <span>180M+ plays</span>
+                        <span class="bg-green-100 text-green-700 px-2 py-1 rounded-full">#3 Brasil</span>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-2xl hover:scale-105 transition-transform duration-300 shadow-xl border border-purple-100">
+                    <div class="text-6xl mb-4 text-center">🎤</div>
+                    <h3 class="text-xl font-bold mb-2 text-red-700">Festa na Quebrada</h3>
+                    <p class="text-gray-600 mb-4">A energia do nosso samba</p>
+                    <div class="flex justify-between text-sm text-gray-500">
+                        <span>120M+ plays</span>
+                        <span class="bg-red-100 text-red-700 px-2 py-1 rounded-full">Viral</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white/50 backdrop-blur-sm">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+                    Fale Conosco
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="max-w-xl mx-auto bg-white p-8 rounded-2xl shadow-xl">
+                <form action="#" method="POST" class="space-y-6">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-700">Nome</label>
+                        <input type="text" id="name" name="name" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:ring focus:ring-purple-200 focus:outline-none">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700">E-mail</label>
+                        <input type="email" id="email" name="email" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:ring focus:ring-purple-200 focus:outline-none">
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gray-700">Mensagem</label>
+                        <textarea id="message" name="message" rows="4" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:ring focus:ring-purple-200 focus:outline-none"></textarea>
+                    </div>
+                    <div class="flex justify-center">
+                        <button type="submit" class="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white px-6 py-3 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
+                            📬 Enviar Mensagem
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+<!-- Rodapé novo e responsivo adaptado -->
+<footer class="bg-black text-white text-center py-8 mt-16">
+  <div class="max-w-[1200px] mx-auto px-6">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+<div class="text-center">
+  <h4 class="font-bold text-xl mb-4 text-wa">
+    <a href="https://www.watechevoce.com.br" 
+       class="font-bold text-wa hover:text-waHover transition-colors duration-300 animate-pulse drop-shadow inline-flex items-center gap-1 justify-center mx-auto">
+      <span>🌐</span>
+      <span class="bg-gradient-to-r from-wa to-[#1de9b6] bg-clip-text text-transparent">
+        WATech
+      </span>
+    </a>
+  </h4>
+  <p class="text-gray-300">Transformando negócios através da tecnologia</p>
+</div>
 
 
-<!-- Agradecimento -->
-<section class="py-16 px-4 sm:px-6 text-center max-w-6xl mx-auto mb-12 border-gray-200 bg-gray-100" data-aos="fade-up">
-  <h3 class="text-4xl font-bold mb-4 text-gray-800">Agradecemos aos nossos Patrocinadores</h3>
-  <p class="text-gray-600 text-lg max-w-3xl mx-auto mb-12">
-    Nosso sucesso não seria possível sem o apoio dos nossos parceiros e patrocinadores. Muito obrigado pela confiança e parceria!
-  </p>
+      <div>
+        <h4 class="font-bold text-lg mb-4">Contato</h4>
+        <p class="text-gray-300">📞 <a href="https://wa.me/5521991813996" target="_blank" class="underline hover:text-waHover">+55 21 99181-3996</a></p>
+        <p class="text-gray-300">📧 novamente@gmail.com</p>
+      </div>
+      <div>
+        <h4 class="font-bold text-lg mb-4">Redes Sociais</h4>
+        <div class="flex justify-center space-x-4 text-white">
+          <!-- WhatsApp -->
+          <a href="https://wa.me/5521991813996" target="_blank" aria-label="WhatsApp" class="text-green-400 hover:text-green-500 transition-colors duration-300">
+            <svg class="inline w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M20.52 3.48A11.93 11.93 0 0 0 12 0C5.37 0 0 5.37 0 12c0 2.11.55 4.16 1.6 5.98L0 24l6.18-1.62A11.94 11.94 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.19-1.24-6.19-3.48-8.52zM12 22c-1.85 0-3.66-.5-5.23-1.44l-.37-.22-3.67.96.98-3.57-.24-.37A9.94 9.94 0 1 1 12 22zm5.47-7.14c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.27-.47-2.42-1.5-.9-.8-1.5-1.77-1.68-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.5-.5-.67-.5h-.57c-.2 0-.52.07-.8.37-.27.3-1.05 1.02-1.05 2.5 0 1.47 1.07 2.9 1.22 3.1.15.2 2.1 3.2 5.1 4.37.71.3 1.26.48 1.7.62.71.23 1.36.2 1.87.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.08-.12-.27-.2-.57-.35z"/>
+            </svg>
+          </a>
 
-  <!-- Galeria de patrocinadores -->
-  <div class="grid grid-cols-2 sm:grid-cols-4 gap-8 items-center justify-center">
-    
-    <!-- Patrocinador 1 -->
-    <div class="flex flex-col items-center p-4">
-      <a href="https://www.watechevoce.com.br/" target="_blank" rel="noopener noreferrer" class="block">
-        <img src="static/assets/img/watech.webp" alt="Patrocinador 1" class="h-40 object-contain mx-auto hover:scale-105 transition-transform duration-300" />
-      </a>
-      <a href="https://www.watechevoce.com.br/" target="_blank" rel="noopener noreferrer" class="mt-3 text-blue-600 hover:underline text-sm font-medium cursor-pointer">
-        Aperte e conheça mais.
-      </a>
+          <!-- Instagram -->
+          <a href="https://instagram.com/novamentenoar" target="_blank" aria-label="Instagram" class="text-pink-500 hover:text-pink-600 transition-colors duration-300">
+            <svg class="inline w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2.2c3.2 0 3.584.012 4.85.07 1.17.056 1.97.24 2.43.41a4.92 4.92 0 0 1 1.77 1.03 4.92 4.92 0 0 1 1.03 1.77c.17.46.354 1.26.41 2.43.058 1.266.07 1.65.07 4.85s-.012 3.584-.07 4.85c-.056 1.17-.24 1.97-.41 2.43a4.92 4.92 0 0 1-1.03 1.77 4.92 4.92 0 0 1-1.77 1.03c-.46.17-1.26.354-2.43.41-1.266.058-1.65.07-4.85.07s-3.584-.012-4.85-.07c-1.17-.056-1.97-.24-2.43-.41a4.92 4.92 0 0 1-1.77-1.03 4.92 4.92 0 0 1-1.03-1.77c-.17-.46-.354-1.26-.41-2.43C2.212 15.784 2.2 15.4 2.2 12s.012-3.584.07-4.85c.056-1.17.24-1.97.41-2.43A4.92 4.92 0 0 1 3.71 2.95a4.92 4.92 0 0 1 1.77-1.03c.46-.17 1.26-.354 2.43-.41C8.416 2.212 8.8 2.2 12 2.2zm0-2.2C8.736 0 8.332.012 7.052.07 5.77.128 4.87.31 4.09.54a7.07 7.07 0 0 0-2.56 1.64A7.07 7.07 0 0 0 .54 4.09c-.23.78-.412 1.68-.47 2.96C.012 8.332 0 8.736 0 12c0 3.264.012 3.668.07 4.948.058 1.28.24 2.18.47 2.96a7.07 7.07 0 0 0 1.64 2.56 7.07 7.07 0 0 0 2.56 1.64c.78.23 1.68.412 2.96.47C8.332 23.988 8.736 24 12 24s3.668-.012 4.948-.07c1.28-.058 2.18-.24 2.96-.47a7.07 7.07 0 0 0 2.56-1.64 7.07 7.07 0 0 0 1.64-2.56c.23-.78.412-1.68.47-2.96.058-1.28.07-1.684.07-4.948s-.012-3.668-.07-4.948c-.058-1.28-.24-2.18-.47-2.96a7.07 7.07 0 0 0-1.64-2.56A7.07 7.07 0 0 0 19.91.54c-.78-.23-1.68-.412-2.96-.47C15.668.012 15.264 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a3.999 3.999 0 1 1 0-7.998 3.999 3.999 0 0 1 0 7.998zm7.844-10.406a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z"/>
+            </svg>
+          </a>
+
+          <!-- YouTube -->
+          <a href="https://www.youtube.com/@gruponovamenteoficial3904" target="_blank" aria-label="YouTube" class="text-red-500 hover:text-red-600 transition-colors duration-300">
+            <svg class="inline w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M23.498 6.186a2.994 2.994 0 0 0-2.107-2.12C19.13 3.5 12 3.5 12 3.5s-7.13 0-9.391.566A2.994 2.994 0 0 0 .502 6.186C0 8.45 0 12 0 12s0 3.55.502 5.814a2.994 2.994 0 0 0 2.107 2.12C4.87 20.5 12 20.5 12 20.5s7.13 0 9.391-.566a2.994 2.994 0 0 0 2.107-2.12C24 15.55 24 12 24 12s0-3.55-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
     </div>
-
-    <!-- Patrocinador 2 -->
-    <div class="flex flex-col items-center p-4">
-      <a href="https://link-do-patrocinador2.com" target="_blank" rel="noopener noreferrer" class="block">
-        <img src="https://via.placeholder.com/150x100?text=Patrocinador+2" alt="Patrocinador 2" class="h-40 object-contain mx-auto hover:scale-105 transition-transform duration-300" />
-      </a>
-      <a href="https://link-do-patrocinador2.com" target="_blank" rel="noopener noreferrer" class="mt-3 text-blue-600 hover:underline text-sm font-medium cursor-pointer">
-        Aperte e conheça mais.
-      </a>
-    </div>
-
-    <!-- Patrocinador 3 -->
-    <div class="flex flex-col items-center p-4">
-      <a href="https://link-do-patrocinador3.com" target="_blank" rel="noopener noreferrer" class="block">
-        <img src="https://via.placeholder.com/150x100?text=Patrocinador+3" alt="Patrocinador 3" class="h-40 object-contain mx-auto hover:scale-105 transition-transform duration-300" />
-      </a>
-      <a href="https://link-do-patrocinador3.com" target="_blank" rel="noopener noreferrer" class="mt-3 text-blue-600 hover:underline text-sm font-medium cursor-pointer">
-        Aperte e conheça mais.
-      </a>
-    </div>
-
-    <!-- Patrocinador 4 -->
-    <div class="flex flex-col items-center p-4">
-      <a href="https://link-do-patrocinador4.com" target="_blank" rel="noopener noreferrer" class="block">
-        <img src="https://via.placeholder.com/150x100?text=Patrocinador+4" alt="Patrocinador 4" class="h-40 object-contain mx-auto hover:scale-105 transition-transform duration-300" />
-      </a>
-      <a href="https://link-do-patrocinador4.com" target="_blank" rel="noopener noreferrer" class="mt-3 text-blue-600 hover:underline text-sm font-medium cursor-pointer">
-        Aperte e conheça mais.
-      </a>
-    </div>
-
-  </div>
-</section>
-
-
-
-  <!-- Footer -->
-  <footer class="bg-gray-900 py-6 text-center text-gray-400 text-sm">
-    <p>© 2025 PagodeVibe. Todos os direitos reservados. Desenvolvido por 
-      <a href="https://www.watechevoce.com.br/" class="text-yellow-400 hover:underline">WATech</a>
+    <p class="text-gray-400 text-sm">
+      © 2024 WATech. Todos os direitos reservados. Desenvolvido por 
+      <a href="https://wa.me/5521991813996" target="_blank" rel="noopener noreferrer"
+         class="underline font-bold text-wa hover:text-waHover transition-colors duration-300 animate-pulse drop-shadow">
+        <span class="bg-gradient-to-r from-wa to-[#1de9b6] bg-clip-text text-transparent">
+          WATech
+        </span>
+      </a>.
     </p>
-  </footer>
+  </div>
+</footer>
 
-  <!-- Script menu mobile -->
-  <script>
-    const btn = document.getElementById('menu-btn');
-    const menu = document.getElementById('mobile-menu');
-    btn.addEventListener('click', () => {
-      menu.classList.toggle('hidden');
-    });
-  </script>
+
+<script>
+    // Controle de áudio do vídeo de fundo
+    const video = document.getElementById('bgVideo');
+    const muteBtn = document.getElementById('muteBtn');
+    const muteSlash = document.getElementById('muteSlash');
+    const muteText = document.getElementById('muteText');
+
+    // Inicia o vídeo sempre mutado
+    video.muted = true;
+    video.volume = 0.7;
+    video.play();
+    muteText.textContent = 'Ativar Som';
+    muteSlash.style.display = '';
+
+    muteBtn.onclick = function () {
+        video.muted = !video.muted;
+        if (video.muted) {
+            muteText.textContent = 'Ativar Som';
+            muteSlash.style.display = '';
+        } else {
+            muteText.textContent = 'Mutar';
+            muteSlash.style.display = 'none';
+            video.play(); // Garante que o som ative após clique
+        }
+    };
+</script>
+
 </body>
 </html>
